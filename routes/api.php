@@ -27,3 +27,8 @@ Route::post('account/create', 'AccountController@store')->name('account.create')
 Route::get('account/{id}', 'AccountController@view')->name('account.view');
 Route::put('account/{id}', 'AccountController@update')->name('account.update');
 Route::delete('account/{id}', 'AccountController@destroy')->name('account.delete');
+
+Route::post('phone/create', 'PhoneController@store')->name('phone.create');
+Route::put('phone/{id}', 'PhoneController@update')->name('phone.update');
+Route::delete('phone/{id}', 'PhoneController@destroy')->name('phone.delete');
+Route::get('phone/{id}', 'PhoneController@view')->name('phone.view');

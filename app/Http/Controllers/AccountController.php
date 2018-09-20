@@ -42,7 +42,7 @@ class AccountController extends Controller
     
     public function update(AccountUpdateRequest $request, $id) {
         $account = Account::find($id);
-        if ($account && $account->id == $request->updatedby) {
+        if ($account->count() && $account->id == $request->updatedby) {
             $account->update($request->except(['updatedby']));
             return new AccountDataResource($account);
         }

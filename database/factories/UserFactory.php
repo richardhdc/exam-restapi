@@ -39,3 +39,11 @@ $factory->define(App\Client::class, function (Faker $faker) {
         'address' => $faker->address,
     ];
 });
+
+
+$factory->define(App\Phone::class, function (Faker $faker) {
+    return [
+        'account_id' => 1,
+        'phone' => $faker->numberBetween(10000000000,99999999999),
+    ];
+});

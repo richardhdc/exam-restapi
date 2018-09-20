@@ -23,7 +23,7 @@ class ClientController extends Controller
     
     public function update(ClientUpdateRequest $request, $id) {
         $client = Client::find($id);
-        if ($client && $client->id == $request->updatedby) {
+        if ($client->count() && $client->id == $request->updatedby) {
             $client->update($request->except(['updatedby']));
             return new ClientDataResource($client);
         }
