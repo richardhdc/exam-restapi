@@ -21,3 +21,21 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->define(App\Account::class, function (Faker $faker) {
+    return [
+        'fullname' => $faker->name,
+        'isAdmin' => $faker->boolean,
+        'isAuthorized' => $faker->boolean,
+    ];
+});
+    
+
+$factory->define(App\Client::class, function (Faker $faker) {
+    return [
+        'email' => $faker->email,
+        'name' => $faker->name,
+        'address' => $faker->address,
+    ];
+});
